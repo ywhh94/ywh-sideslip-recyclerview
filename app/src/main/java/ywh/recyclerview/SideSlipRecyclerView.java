@@ -176,7 +176,7 @@ public class SideSlipRecyclerView extends RecyclerView {
                                 itemStatus = 0;
                             }
                             if (onItemSlideListener != null) {
-                                onItemSlideListener.onSlide(itemViewPosition, itemStatus == 0, outSideView);
+                                onItemSlideListener.onSlide(itemViewPosition, itemStatus == 1, outSideView);
                             }
                         }
                     }, 100);
