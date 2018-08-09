@@ -70,6 +70,17 @@ public class SideSlipRecyclerView extends RecyclerView {
         };
     }
 
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int sizeWidth = MeasureSpec.getSize(widthMeasureSpec);
+        int sizeHeight = MeasureSpec.getSize(heightMeasureSpec);
+        setMeasuredDimension(
+                //
+                sizeWidth,
+                sizeHeight
+        );
+    }
+
     //这里出现了事件分发的冲突，导致RecyclerView无法响应ACTION_DOWN事件，所以需要RecycleView进行该事件的劫持。
     //而且在滑动的过程当中，ACTION_MOVE事件也没有很好的响应，所以也把这个事件劫持了。
     @Override
